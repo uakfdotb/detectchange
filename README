@@ -1,0 +1,18 @@
+Change Detection
+================
+
+Segmentation
+------------
+
+First step is to train model to segment the imagery to detect roads, and then
+find places where we detect roads in the new imagery but not in the old
+imagery.
+
+* Copy discoverlib from https://github.com/mitroadmaps/roadtracer/ (in lib/ folder)
+  and put in segment/discoverlib.
+* Run segment/run.py to train the model. You may need to edit the paths at top
+  of file.
+* Run segment/apply.py to obtain segmentation outputs. Again may need to edit
+  some paths.
+* Run cmp-negative-road.go to obtain the detection where we find road in new
+  image but not in old image.
